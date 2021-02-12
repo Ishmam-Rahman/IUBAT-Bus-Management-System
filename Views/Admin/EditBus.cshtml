@@ -1,0 +1,51 @@
+﻿@model IUBAT_Bus_Management_System.ViewModel.EBus
+
+@{
+    ViewData["Title"] = "EditBus";
+}
+
+<h1 class="text-md-center">Edit Bus Details</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditBus">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="BusName" class="control-label"></label>
+                <input asp-for="BusName" class="form-control" />
+                <span asp-validation-for="BusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="BusNameB" class="form-control" type="hidden" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverName" class="control-label"></label>
+                <input asp-for="DriverName" class="form-control" />
+                <span asp-validation-for="DriverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverPhone" class="control-label"></label>
+                <input asp-for="DriverPhone" class="form-control" />
+                <span asp-validation-for="DriverPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeparterTime" class="control-label"></label>
+                <input asp-for="DeparterTime" class="form-control" />
+                <span asp-validation-for="DeparterTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ShowBusList" class="btn btn-primary">Bus List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

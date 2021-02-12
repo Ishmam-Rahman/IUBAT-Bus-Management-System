@@ -1,0 +1,41 @@
+﻿@model IEnumerable<IUBAT_Bus_Management_System.Models.Route>
+
+@{
+    ViewData["Title"] = "busbyplace";
+}
+
+<h1 class="text-center">Bus List</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RouteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RouteName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                </td>
+
+            </tr>
+    }
+        </tbody>
+    </table>

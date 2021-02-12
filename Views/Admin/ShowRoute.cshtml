@@ -1,0 +1,47 @@
+﻿@model IEnumerable<IUBAT_Bus_Management_System.Models.Route>
+
+@{
+    ViewData["Title"] = "ShowRoute";
+}
+
+<h1 class="text-center">Point you can get the bus</h1>
+
+<div class="col-12 text-right">
+    <a asp-action="AddRoute" class="btn btn-info">&nbsp; Extend Location</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RouteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RouteName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                </td>
+                <td>
+                    <a asp-action="DeleteRoute" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
